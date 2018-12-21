@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const path = require('path')
 const morgan = require('morgan');
+const {db} = require('./db');
+const session = require('express-session')
 
 // MIDDLEWARE
 //    logging middleware
@@ -11,8 +13,26 @@ app.use(morgan('dev'));
 app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
+// configure and create our database store
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const dbStore = new SequelizeStore({ db: db });
+
+// sync so that our session table gets created
+dbStore.sync();
+
+// plug the store into our session middleware
+//    Session Middleware
+
+// plug the store into our session middleware
+app.use(session({
+  secret: process.env.SESSION_SECRET || 'a wildly insecure secret',
+  store: dbStore,
+  resave: false,
+  saveUninitialized: false
+}));
+
 // api router
-app.use('/api', require('../api'))
+app.use('/api', require('./api'))
 
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
@@ -35,7 +55,4 @@ app.use(function (err, req, res, next) {
   res.send(err.message || 'Internal server error.');
 });
 
-const port = process.env.PORT || 3000; // process.env.PORT is for deploying to Heroku!
-app.listen(port, function () {
-  console.log(`App is listening on port ${port}`);
-});
+module.exports = app

@@ -7,27 +7,35 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run start-server & npm run build-watch",
     "build-watch": "webpack -w",
-    "start-server": "nodemon server/app.js --ignore public"
+    "start-server": "nodemon server/start.js --ignore public"
   },
-  "author": "",
+  "author": "Preston Wallace",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
+    "connect-session-sequelize": "^6.0.0",
     "express": "^4.16.4",
+    "express-session": "^1.15.6",
     "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "pg": "^7.7.1",
+    "pg-hstore": "^2.3.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "sequelize": "^4.42.0"
   },
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.0",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.4",
+    "css-loader": "^2.0.1",
+    "style-loader": "^0.23.1",
     "webpack": "^4.28.0",
     "webpack-cli": "^3.1.2"
   }
