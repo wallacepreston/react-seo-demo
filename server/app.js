@@ -4,6 +4,7 @@ const path = require('path')
 const morgan = require('morgan');
 const {db} = require('./db');
 const session = require('express-session')
+const passport = require('passport');
 
 // MIDDLEWARE
 //    logging middleware
@@ -31,12 +32,20 @@ app.use(session({
   saveUninitialized: false
 }));
 
+// Passport: Initialize
+app.use(passport.initialize());
+app.use(passport.session());
+
 // api router
 app.use('/api', require('./api'))
 
+// Static Middleware: Allows users/clients to access all files in the `public` directory
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
-// For all GET requests that aren't to an API route, send index.html
+// Authentication Router
+app.use('/auth', require('./auth'))
+
+// For all GET requests that aren't to an API or auth route, send index.html
 app.get('/*', (req, res, next) => {
   res.sendFile(path.join(__dirname, '..', 'index.html'))
 })
