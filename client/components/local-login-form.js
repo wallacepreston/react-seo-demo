@@ -33,6 +33,7 @@ class LocalLoginForm extends React.Component {
       email: '',
       password: ''
     })
+    this.props.history.push('/home')
   }
   render () {
     return (
@@ -47,7 +48,8 @@ class LocalLoginForm extends React.Component {
           <input type='password' name='password' className='input' placeholder="Enter password" value={this.state.password} onChange={this.handleChange} />
         </div>
         <div className='m1'>
-          <button type='submit' className='btn bg-blue white p1 rounded'>Submit</button>
+        <button type="submit" className="btn btn-primary">Submit</button>
+
         </div>
       </div>
     </form>

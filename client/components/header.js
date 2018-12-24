@@ -1,11 +1,10 @@
 import React from 'react'
 const Header = () => (
-  <div className="justify-content-center">
-    <div className="col text-center">
-      <h1>Hello World!</h1>
-      <p>This is where the content goes.</p>
-    </div>
-  </div>
+    <nav>
+      <div className="container">
+        Hello World | Home | Welcome! What would you like to view? Log In | Log Out
+      </div>
+    </nav>
 )
 
 export default Header

@@ -1,4 +1,9 @@
 import axios from 'axios'
+
+// INITIAL STATE
+const initialState = {
+  user: {}
+}
 // ACTION TYPES
 const GOT_USER = 'GOT_USER'
 
@@ -23,9 +28,11 @@ export const login = (formData) => {
   }
 }
 
-// INITIAL STATE
-const initialState = {
-  user: {}
+export const logout = () => {
+  return async (dispatch) => {
+    await axios.delete('/auth/logout')
+    dispatch(gotMe(initialState.user))
+  }
 }
 
 const reducer = (state = initialState, action) => {
