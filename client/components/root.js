@@ -13,8 +13,9 @@ class Root extends React.Component {
   constructor(){
     super()
   }
-  componentDidMount () {
-    this.props.getMe()
+  async componentDidMount () {
+    await this.props.getMe()
+    this.props.history.push('/home')
   }
 
   render () {

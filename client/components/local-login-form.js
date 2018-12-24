@@ -16,16 +16,17 @@ class LocalLoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
   componentDidMount () {
+
   }
   handleChange (event) {
     this.setState({
       [event.target.name]: event.target.value
     })
   }
-  handleSubmit (event) {
+  async handleSubmit (event) {
     event.preventDefault()
     try {
-      this.props.login(this.state)
+      await this.props.login(this.state)
     } catch (err){
       console.log(err)
     }
