@@ -31,7 +31,7 @@ const User = db.define('user', {
   },
   imageURL: {
     type: Sequelize.STRING,
-    defaultValue: 'ttps://randomuser.me/api/portraits/men/1.jpg'
+    defaultValue: 'https://randomuser.me/api/portraits/men/1.jpg'
   },
   password: {
     type: Sequelize.STRING

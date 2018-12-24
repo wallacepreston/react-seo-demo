@@ -1,15 +1,12 @@
 const router = require('express').Router()
 const {User} = require('../db')
-const passport = require('passport');
 module.exports = router
 
 // all routes below begin with '/auth'
 
-// oauth router
-// router.use('/google', require('./oauth'))
-
 // fetch logged-in user on session
 router.get('/me', (req, res, next) => {
+  console.log('>>>>>>>>>>>>>> req.user is: ', req.user)
   res.json(req.user)
 })
 
@@ -54,20 +51,4 @@ router.delete('/logout', (req, res, next) => {
   req.logout();
   req.session.destroy()
   res.sendStatus(204);
-});
-
-// serializing user is adding session information to our store in DB, so Passport knows how to find the user for subsequent requests.
-passport.serializeUser((user, done) => {
-  try {
-    done(null, user.id);
-  } catch (err) {
-    done(err);
-  }
-});
-
-// ...and for all subsequent requests, the user is "deserialized" or looked up from the database by the id we gave it when serializing
-passport.deserializeUser((id, done) => {
-  User.findById(id)
-    .then(user => done(null, user))
-    .catch(done);
 });

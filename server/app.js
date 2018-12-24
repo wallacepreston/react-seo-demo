@@ -2,9 +2,24 @@ const express = require('express');
 const app = express();
 const path = require('path')
 const morgan = require('morgan');
-const {db} = require('./db');
+const {db, User} = require('./db');
 const session = require('express-session')
 const passport = require('passport');
+
+
+// serializing user is adding session information to our store in DB, so Passport knows how to find the user for subsequent requests.
+passport.serializeUser((user, done) => {
+  console.log('serializing user: ');
+  console.log(user)
+  done(null, user.id)
+});
+
+// ...and for all subsequent requests, the user is "deserialized" or looked up from the database by the id we gave it when serializing
+passport.deserializeUser((id, done) => {
+  User.findById(id)
+    .then(user => done(null, user))
+    .catch(done);
+});
 
 // MIDDLEWARE
 //    logging middleware
@@ -24,6 +39,8 @@ dbStore.sync();
 // plug the store into our session middleware
 //    Session Middleware
 
+// app.use(session());
+
 // plug the store into our session middleware
 app.use(session({
   secret: process.env.SESSION_SECRET || 'a wildly insecure secret',
@@ -35,9 +52,6 @@ app.use(session({
 // Passport: Initialize
 app.use(passport.initialize());
 app.use(passport.session());
-
-// api router
-app.use('/api', require('./api'))
 
 // Static Middleware: Allows users/clients to access all files in the `public` directory
 app.use(express.static(path.join(__dirname, '..', 'public')))

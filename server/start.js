@@ -1,6 +1,6 @@
 const {db} = require('./db');
 const app = require('./app');
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 4000;
 
 db.sync({force: false})  // sync our database
   .then(function(){
