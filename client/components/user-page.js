@@ -22,7 +22,7 @@ class UserPage extends React.Component {
       <div>
         <div className='flex'>
           <img src={user.imageURL} />
-          <h1>Welcome back {(user.email || user.name)}!</h1>
+          <h1>Welcome back, {(user.firstName || user.email)}!</h1>
         </div>
         <div>
         <button type="button" className="btn btn-danger" onClick={this.handleClick}>Log Out</button>

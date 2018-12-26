@@ -7,6 +7,7 @@ import {getMe} from '../reducers'
 import Header from './header'
 import Login from './login'
 import UserPage from './user-page'
+import SignUp from './sign-up'
 
 
 class Root extends React.Component {
@@ -15,7 +16,9 @@ class Root extends React.Component {
   }
   async componentDidMount () {
     await this.props.getMe()
-    this.props.history.push('/home')
+    if (this.props.user) {
+      this.props.history.push('/home')
+    }
   }
 
   render () {
@@ -27,6 +30,7 @@ class Root extends React.Component {
             <Switch>
               <Route exact path='/home' component={UserPage} />
               <Route exact path='/' component={Login} />
+              <Route exact path='/signup' component={SignUp} />
             </Switch>
           </div>
         </div>
@@ -35,10 +39,16 @@ class Root extends React.Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    user: state.user
+  }
+}
+
 const mapDispatchToProps = (dispatch) => ({
   getMe: () => dispatch(getMe())
 })
 
-const RootWithRouter = withRouter(connect(null, mapDispatchToProps)(Root))
+const RootWithRouter = withRouter(connect(mapStateToProps, mapDispatchToProps)(Root))
 
 export default RootWithRouter

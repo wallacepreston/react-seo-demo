@@ -1,8 +1,9 @@
 import React from 'react'
+import {Link} from 'react-router-dom'
 const Header = () => (
     <nav>
       <div className="container">
-        Hello World | Home | Welcome! What would you like to view? Log In | Log Out
+        Hello World | <Link to="/home">Home</Link> | Welcome! What would you like to view? <Link to="/">Log In</Link> | <Link to="/signup">Sign Up</Link>
       </div>
     </nav>
 )

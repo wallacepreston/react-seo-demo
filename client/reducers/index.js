@@ -35,6 +35,13 @@ export const logout = () => {
   }
 }
 
+export const signup = (user) => {
+  return async (dispatch) => {
+    const {data} = await axios.post('/auth/signup', user);
+    dispatch(gotMe(data));
+  }
+}
+
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case GOT_USER:

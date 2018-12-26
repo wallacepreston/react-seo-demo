@@ -6,7 +6,6 @@ const {db, User} = require('./db');
 const session = require('express-session')
 const passport = require('passport');
 
-
 // serializing user is adding session information to our store in DB, so Passport knows how to find the user for subsequent requests.
 passport.serializeUser((user, done) => {
   console.log('serializing user: ');

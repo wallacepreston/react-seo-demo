@@ -1,6 +1,6 @@
 import React from 'react'
 import LocalLoginForm from './local-login-form'
-// import OauthLoginForm from './oauth-login-form'
+import OauthLoginForm from './oauth-login-form'
 
 const Login = () => {
   return (
@@ -8,8 +8,8 @@ const Login = () => {
       <h1>Please Log In:</h1>
         <div>
           <LocalLoginForm />
-          {/* <OauthLoginForm provider='google'/>
-          <OauthLoginForm provider='facebook'/> */}
+          <OauthLoginForm provider='google'/>
+          {/* <OauthLoginForm provider='facebook'/> */}
         </div>
     </div>
   )

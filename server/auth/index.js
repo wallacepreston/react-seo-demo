@@ -3,6 +3,8 @@ const {User} = require('../db')
 module.exports = router
 
 // all routes below begin with '/auth'
+// oauth router
+router.use('/google', require('./oauth-google'))
 
 // fetch logged-in user on session
 router.get('/me', (req, res, next) => {
