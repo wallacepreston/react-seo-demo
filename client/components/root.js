@@ -1,4 +1,4 @@
-import 'regenerator-runtime/runtime';
+// import 'regenerator-runtime/runtime';
 import React from 'react'
 import { Route, Switch, withRouter } from 'react-router-dom'
 import {connect} from 'react-redux'
