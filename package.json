@@ -6,7 +6,7 @@
   "scripts": {
     "prestart": "npm run build",
     "start:dev": "npm run build-watch & npm run start-server",
-    "start-server-deploy": "node main.js",
+    "start-server-deploy": "node start.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run start-server-deploy",
     "build": "webpack",
