@@ -1,4 +1,4 @@
-const {db} = require('./db');
+// const {db} = require('./db');
 const app = require('./app');
 const port = process.env.PORT || 4000;
 
@@ -8,4 +8,4 @@ const port = process.env.PORT || 4000;
     app.listen(port, () => console.log(`cookin' up good stuff on port ${port}`)) // then start listening with our express server once we have synced
   // })
 
-module.exports = db
+// module.exports = db
