@@ -1,54 +1,28 @@
-// import 'regenerator-runtime/runtime';
-import React from 'react'
-import { Route, Switch, withRouter } from 'react-router-dom'
-import {connect} from 'react-redux'
+import React, { Component } from 'react';
+import {Switch, Route} from 'react-router-dom'
 
-import {getMe} from '../reducers'
-import Header from './header'
-import Login from './login'
-import UserPage from './user-page'
-import SignUp from './sign-up'
+import UrlBadLoader from './bad-component-switching'
+import UsingHashRouter from './using-hash-router'
+import UsingBrowserRouter from './using-browser-router'
+import NavBar from './nav-bar'
+import NoHelmetLinks from './no-helmet-links'
+import WithHelmetLinks from './with-helmet-links'
 
-
-class Root extends React.Component {
-  constructor(){
-    super()
-  }
-  async componentDidMount () {
-    await this.props.getMe()
-    if (this.props.user) {
-      this.props.history.push('/home')
-    }
-  }
-
-  render () {
+class App extends Component {
+  render() {
     return (
-      <div>
-        <Header />
-        <div className="justify-content-center">
-          <div className="col text-center">
-            <Switch>
-              <Route exact path='/home' component={UserPage} />
-              <Route exact path='/' component={Login} />
-              <Route exact path='/signup' component={SignUp} />
-            </Switch>
-          </div>
-        </div>
+      <div className="App">
+        <NavBar />
+        <Switch>
+          <Route path='/routing/bad-component-switching' component={UrlBadLoader} />
+          <Route path='/routing/hash-router' component={UsingHashRouter} />
+          <Route path='/routing/browser-router' component={UsingBrowserRouter} />
+          <Route path='/header/no-helmet/' component={NoHelmetLinks} />
+          <Route path='/header/with-helmet/' component={WithHelmetLinks} />
+        </Switch>
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = (state) => {
-  return {
-    user: state.user
-  }
-}
-
-const mapDispatchToProps = (dispatch) => ({
-  getMe: () => dispatch(getMe())
-})
-
-const RootWithRouter = withRouter(connect(mapStateToProps, mapDispatchToProps)(Root))
-
-export default RootWithRouter
+export default App;

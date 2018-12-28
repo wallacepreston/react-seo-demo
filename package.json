@@ -4,10 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prestart": "npm run build",
+    "start:dev": "npm run build-watch & npm run start-server",
+    "start-server-deploy": "node main.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run start-server & npm run build-watch",
+    "start": "npm run start-server-deploy",
     "build-watch": "webpack -w",
-    "start-server": "nodemon server/start.js --ignore public"
+    "start-server": "nodemon server/start.js --ignore public",
+    "heroku-postbuild": "npm run build"
   },
   "author": "Preston Wallace",
   "license": "ISC",
@@ -24,6 +28,7 @@
     "pg-hstore": "^2.3.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
+    "react-helmet": "^5.2.0",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.3.1",
     "redux": "^4.0.1",
