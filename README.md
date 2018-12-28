@@ -1,6 +1,6 @@
-# Boiler Maker
+# React SEO Demo App
 
-A 'boilerplate' skeleton of a web app using the full stack. Basic User table defined with authentication and hashing and salting set up.  This repo can be forked and used to build out a web app.  It has the basic functionality that most apps will need using this specific stack of tech.
+A skeleton of a web app used to demonstrate how Google fetches certain implementations of React.
 
 ## Getting started
 
@@ -13,8 +13,6 @@ Build out your app to your liking!
 Stack used:
 - Node.js
 - Express
-- PostgreSQL
-- Sequelize
 - React
 - Redux
 - React-Redux

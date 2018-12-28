@@ -1,6 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, Link} from 'react-router-dom'
 import DogsRuleWithHelmet from './dogs-rule-with-helmet'
 import CatsRuleWithHelmet from './cats-rule-with-helmet'
 

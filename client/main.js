@@ -1,17 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
-import {Provider} from 'react-redux';
 
 import '../public/index.css';
-import store from './store'
 import Root from './components/root'
 
 ReactDOM.render(
-  <Provider store={store}>
     <BrowserRouter>
       <Root />
-    </BrowserRouter>
-  </Provider>,
+    </BrowserRouter>,
   document.getElementById('app') // make sure this is the same as the id of the div in your index.html
 );
