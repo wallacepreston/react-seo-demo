@@ -8,9 +8,9 @@ const NavBar = () => (
     <p>
       Routing: <Link to="/routing/bad-component-switching">Bad Component Switching</Link> | <Link to="/routing/browser-router">Browser Router Demo</Link> | <Link to="/routing/hash-router">Hash Router Demo</Link>
       <br />
-      Meta Tags: <Link to="/header/no-helmet/">No Helmet</Link> | <Link to="/header/with-helmet/">With Helmet</Link>
+      Header (Meta Tags): <Link to="/header/no-helmet/">No Helmet</Link> | <Link to="/header/with-helmet/">With Helmet</Link>
       <br />
-      Indexed by Google?: <Link to="/incremental-loading/">Incremental Loading</Link>
+      Async: Can Google See Your Content? <Link to="/async-stuff/incremental-loading/">Incremental Loading</Link> | <Link to="/async-stuff/important-content">Important Content</Link>
     </p>
     </div>
   </nav>

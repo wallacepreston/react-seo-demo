@@ -22,37 +22,37 @@ class IncrementalLoading extends Component {
     })
     setTimeout(() => {
       this.setState({
-        message2: 'Message 2 (100ms): Googlebot will almost certainly crawl'
+        message2: 'Message 2 (500ms): Googlebot will almost certainly crawl'
       })
-    }, 100);
+    }, 500);
     setTimeout(() => {
       this.setState({
-        message3: 'Message 3 (2 sec): Googlebot may or may not crawl'
+        message3: 'Message 3 (2 sec): Googlebot will probably crawl'
       })
     }, 2000);
     setTimeout(() => {
       this.setState({
-        message4: 'Message 4 (3sec): Googlebot may or may not crawl'
+        message4: 'Message 4 (3sec): Googlebot less likely to crawl'
       })
     }, 3000);
     setTimeout(() => {
       this.setState({
-        message5: 'Message 5 (4 sec): Googlebot definitely will NOT crawl'
+        message5: 'Message 5 (4 sec): Googlebot may or may not crawl'
       })
     }, 4000);
     setTimeout(() => {
       this.setState({
-        message6: 'Message 6 (5 sec): Googlebot definitely will NOT crawl'
+        message6: 'Message 6 (5 sec): Googlebot MIGHT crawl'
       })
     }, 5000);
     setTimeout(() => {
       this.setState({
-        message7: 'Message 7 (6 sec): Googlebot definitely will NOT crawl'
+        message7: 'Message 7 (6 sec): Googlebot probably will NOT crawl'
       })
     }, 6000);
     setTimeout(() => {
       this.setState({
-        message8: 'Message 8 (7 sec): Googlebot definitely will NOT crawl'
+        message8: 'Message 8 (7 sec): Googlebot almost certainly will NOT crawl'
       })
     }, 7000);
     setTimeout(() => {
@@ -62,19 +62,20 @@ class IncrementalLoading extends Component {
     }, 8000);
     setTimeout(() => {
       this.setState({
-        message10: 'Message 10 (9 sec): Googlebot definitely will NOT crawl'
+        message10: 'Message 10 (9 sec): Googlebot is on to the next page by now.'
       })
     }, 9000);
     setTimeout(() => {
       this.setState({
-        message11: 'Message 11 (10 sec): Googlebot definitely will NOT crawl'
+        message11: 'Message 11 (10 sec): If you\'re seeing this, you\'re definitely not Google.'
       })
     }, 10000);
   }
   render() {
     return (
       <div>
-        <h1>Incrementally Loaded Data</h1>
+        <h1>Data Loaded</h1>
+        <h2>Simulates data that takes differing amounts of time to fetch.</h2>
         <h4>{ this.state.message1 }</h4>
         <h4>{ this.state.message2 }</h4>
         <h4>{ this.state.message3 }</h4>

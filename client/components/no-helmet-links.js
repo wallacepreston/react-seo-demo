@@ -5,6 +5,7 @@ import CatsRuleNoHelmet from './cats-rule-no-helmet'
 
 const NoHelmetLinks = () => (
   <div>
+    <h1>Links To URIs that Show Components WITHOUT Using Helmet</h1>
     <Link to="/header/no-helmet/dogs-rule">Dogs Rule - No Helmet</Link> | 
     <Link to="/header/no-helmet/cats-rule">Dogs Rule - No Helmet</Link>
     <Switch>

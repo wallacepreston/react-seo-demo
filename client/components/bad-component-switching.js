@@ -25,6 +25,8 @@ class BadComponentSwitching extends Component {
 
       return (
           <div>
+              <h1>The Wrong Way to Switch Between Components</h1>
+              <h3>I wonder why the URI doesn't change...</h3>
               {active === 'FIRST' ? (
                   <First />
               ) : active === 'SECOND' ? (
