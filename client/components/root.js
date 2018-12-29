@@ -7,6 +7,7 @@ import UsingBrowserRouter from './using-browser-router'
 import NavBar from './nav-bar'
 import NoHelmetLinks from './no-helmet-links'
 import WithHelmetLinks from './with-helmet-links'
+import IncrementalLoading from './incremental-loading';
 
 class App extends Component {
   render() {
@@ -19,6 +20,7 @@ class App extends Component {
           <Route path='/routing/browser-router' component={UsingBrowserRouter} />
           <Route path='/header/no-helmet/' component={NoHelmetLinks} />
           <Route path='/header/with-helmet/' component={WithHelmetLinks} />
+          <Route path='/incremental-loading/' component={IncrementalLoading} />
         </Switch>
       </div>
     );
