@@ -1,14 +1,14 @@
 import React from 'react';
 import {Helmet} from 'react-helmet'
+import CatsRuleNoHelmet from './cats-rule-no-helmet';
 
 const CatsRuleWithHelmet = () => (
     <div>
       <Helmet>
-        <title>Cats Rule</title>
-        <meta name="description" content="Cats are the Best!" />
+        <title>Cats Are Very Sinister</title>
+        <meta name="description" content="Cats will truly take over the world." />
       </Helmet>
-      <h1>Cats Rule</h1>
-      <p>Cats Rule</p>
+      <CatsRuleNoHelmet />
     </div>
 )
 

@@ -9,6 +9,8 @@ import NoHelmetLinks from './no-helmet-links'
 import WithHelmetLinks from './with-helmet-links'
 import IncrementalLoading from './incremental-loading';
 import ImportantFirst from './important-content-loads-first';
+import Home from './home'
+import NotFound from './NotFound'
 
 class App extends Component {
   render() {
@@ -25,6 +27,8 @@ class App extends Component {
               <Route path='/header/with-helmet/' component={WithHelmetLinks} />
               <Route path='/async-stuff/incremental-loading/' component={IncrementalLoading} />
               <Route path='/async-stuff/important-content/' component={ImportantFirst} />
+              <Route exact path='/' component={Home} />
+              <Route path='*' component={NotFound} />
             </Switch>
           </div>
         </div>

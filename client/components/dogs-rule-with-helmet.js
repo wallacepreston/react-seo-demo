@@ -1,14 +1,14 @@
 import React from 'react';
 import {Helmet} from 'react-helmet'
+import DogsRuleNoHelmet from './dogs-rule-no-helmet';
 
 const DogsRuleWithHelmet = () => (
     <div>
       <Helmet>
-        <title>Dogs Rule</title>
-        <meta name="description" content="Dogs are the Best!" />
+        <title>Dogs Can Use Tech Too!</title>
+        <meta name="description" content="Dogs, with the aid of this technological device, can achieve human communication" />
       </Helmet>
-      <h1>Dogs Rule</h1>
-      <p>Dogs Rule</p>
+      <DogsRuleNoHelmet />
     </div>
 )
 

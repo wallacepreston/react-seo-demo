@@ -13,7 +13,7 @@ const WithHelmetLinks = () => (
     </Helmet>
     <h1>Links To URIs that Show Components Using Helmet</h1>
     <Link to="/header/with-helmet/dogs-rule">Dogs Rule - With Helmet</Link> | 
-    <Link to="/header/with-helmet/cats-rule">Dogs Rule - With Helmet</Link>
+    <Link to="/header/with-helmet/cats-rule">Cats Rule - With Helmet</Link>
     <Switch>
       <Route exact path='/header/with-helmet/dogs-rule' component={DogsRuleWithHelmet} />
       <Route exact path='/header/with-helmet/cats-rule' component={CatsRuleWithHelmet} />
