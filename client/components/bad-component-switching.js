@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import First from './first'
 import Second from './second'
 
-class BadComponentSwitching extends Component{
+class BadComponentSwitching extends Component {
   constructor(){
     super()
     this.state = {
@@ -37,7 +37,6 @@ class BadComponentSwitching extends Component{
       );
 
    }
-
-};
+}
 
 export default BadComponentSwitching;

@@ -14,7 +14,7 @@ class App extends Component {
       <div className="App">
         <NavBar />
         <Switch>
-          {/* <Route path='/routing/bad-component-switching' component={UrlBadLoader} /> */}
+          <Route path='/routing/bad-component-switching' component={UrlBadLoader} />
           <Route path='/routing/hash-router' component={UsingHashRouter} />
           <Route path='/routing/browser-router' component={UsingBrowserRouter} />
           <Route path='/header/no-helmet/' component={NoHelmetLinks} />
