@@ -9,6 +9,11 @@ class IncrementalLoading extends Component {
       message3: '',
       message4: '',
       message5: '',
+      message6: '',
+      message7: '',
+      message8: '',
+      message9: '',
+      message10: '',
     };
   }
   componentDidMount() {
@@ -32,7 +37,37 @@ class IncrementalLoading extends Component {
     }, 3000);
     setTimeout(() => {
       this.setState({
-        message5: 'Message 5 (10 sec): Googlebot definitely will NOT crawl'
+        message5: 'Message 5 (4 sec): Googlebot definitely will NOT crawl'
+      })
+    }, 4000);
+    setTimeout(() => {
+      this.setState({
+        message6: 'Message 6 (5 sec): Googlebot definitely will NOT crawl'
+      })
+    }, 5000);
+    setTimeout(() => {
+      this.setState({
+        message7: 'Message 7 (6 sec): Googlebot definitely will NOT crawl'
+      })
+    }, 6000);
+    setTimeout(() => {
+      this.setState({
+        message8: 'Message 8 (7 sec): Googlebot definitely will NOT crawl'
+      })
+    }, 7000);
+    setTimeout(() => {
+      this.setState({
+        message9: 'Message 9 (8 sec): Googlebot definitely will NOT crawl'
+      })
+    }, 8000);
+    setTimeout(() => {
+      this.setState({
+        message10: 'Message 10 (9 sec): Googlebot definitely will NOT crawl'
+      })
+    }, 9000);
+    setTimeout(() => {
+      this.setState({
+        message11: 'Message 11 (10 sec): Googlebot definitely will NOT crawl'
       })
     }, 10000);
   }
@@ -45,6 +80,12 @@ class IncrementalLoading extends Component {
         <h4>{ this.state.message3 }</h4>
         <h4>{ this.state.message4 }</h4>
         <h4>{ this.state.message5 }</h4>
+        <h4>{ this.state.message6 }</h4>
+        <h4>{ this.state.message7 }</h4>
+        <h4>{ this.state.message8 }</h4>
+        <h4>{ this.state.message9 }</h4>
+        <h4>{ this.state.message10 }</h4>
+        <h4>{ this.state.message11 }</h4>
         
       </div>
     )
