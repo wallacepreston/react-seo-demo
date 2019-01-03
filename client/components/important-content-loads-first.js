@@ -15,32 +15,38 @@ class ImportantFirst extends Component {
   componentDidMount() {
     this.setState({
       message1: 'Message 1(immediately after component mounts): Googlebot will always crawl'
-    })
-    setTimeout(() => {
+    });
+    this.timeout = [];
+    this.timeout.push(setTimeout(() => {
       this.setState({
         message3: 'Message 3 (2 sec): Googlebot will probably crawl'
       })
-    }, 2000);
-    setTimeout(() => {
+    }, 2000));
+    this.timeout.push(setTimeout(() => {
       this.setState({
         message5: 'Message 5 (4 sec): Googlebot may or may not crawl'
       })
-    }, 4000);
-    setTimeout(() => {
+    }, 4000));
+    this.timeout.push(setTimeout(() => {
       this.setState({
         image7: 'https://i.ytimg.com/vi/wB-r8OfIVVU/hqdefault.jpg'
       })
-    }, 6000);
-    setTimeout(() => {
+    }, 6000));
+    this.timeout.push(setTimeout(() => {
       this.setState({
         image9: 'https://media.giphy.com/media/cs9AnwADBj60g/giphy.gif'
       })
-    }, 8000);
-    setTimeout(() => {
+    }, 8000));
+    this.timeout.push(setTimeout(() => {
       this.setState({
         image11: 'https://i.ytimg.com/vi/KMXnT73k6s8/hqdefault.jpg'
       })
-    }, 10000);
+    }, 10000));
+  }
+  componentWillUnmount(){
+    while (this.timeout.length) {
+      clearTimeout(this.timeout.pop())
+    }
   }
   render() {
     return (
