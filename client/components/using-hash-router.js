@@ -7,7 +7,7 @@ class UsingHashRouter extends Component {
     return (
       <div>
         <h1>Hash Router</h1>
-        <HashRouter> 
+        <HashRouter>
           <HashLinks />
         </HashRouter>
       </div>

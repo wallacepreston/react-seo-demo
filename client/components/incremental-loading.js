@@ -86,8 +86,7 @@ class IncrementalLoading extends Component {
         <h4>{ this.state.message8 }</h4>
         <h4>{ this.state.message9 }</h4>
         <h4>{ this.state.message10 }</h4>
-        <h4>{ this.state.message11 }</h4>
-        
+        <h4>{ this.state.message11 }</h4>    
       </div>
     )
   }

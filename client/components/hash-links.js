@@ -3,7 +3,7 @@ import {Switch, Route, Link} from 'react-router-dom'
 import Dogs from './dogs'
 import Cats from './cats'
 
-class First extends Component {
+class HashLinks extends Component {
   render() {
     return (
       <div>
@@ -18,4 +18,4 @@ class First extends Component {
   }
 }
 
-export default First;
+export default HashLinks;

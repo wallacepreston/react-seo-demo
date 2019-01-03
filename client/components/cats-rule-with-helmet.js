@@ -6,7 +6,7 @@ const CatsRuleWithHelmet = () => (
     <div>
       <Helmet>
         <title>Cats Are Very Sinister</title>
-        <meta name="description" content="Cats will truly take over the world." />
+        <meta name="description" content="Cats will truly take over the world. And of course, they show no mercy... Watch out, Dogs!" />
       </Helmet>
       <CatsRuleNoHelmet />
     </div>
