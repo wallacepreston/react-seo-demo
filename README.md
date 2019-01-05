@@ -21,3 +21,7 @@ Stack used:
 - React
 - Redux
 - React-Redux
+
+Packages Specific to SEO
+- React-Router
+- React-Helmet
